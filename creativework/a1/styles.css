@@ -1,0 +1,49 @@
+body {
+    background-color: beige;
+    color: rgb(57, 57, 57);
+}
+
+div {
+    /* border: .5px solid black; */
+    padding: 20px;
+    align-items: center;
+    margin: 30px;
+}
+
+h1 {
+    /* I am doing -10 margin here because I wanted it to closer to the top.
+    I am not sure if there is a better way to do this. */
+    margin-top: -10px;
+    font-size: 10em;
+    text-align: center;
+    padding: 0px;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+table {
+    
+    
+}
+
+.profile {
+    /* also doing negative margin here. */
+    margin-top: -150px;
+}
+
+td {
+    padding: 50px;
+    align-items: center;
+}
+
+img {
+    width: 400px;
+    height: 500px;
+}
+
+.activityphoto {
+    width: 300px;
+    height: 300px;
+}

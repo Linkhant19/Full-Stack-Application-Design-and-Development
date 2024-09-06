@@ -23,14 +23,19 @@ h2 {
     font-size: 1.2em;
 }
 
-table {
-    
-    
-}
+/* table {
+    align-items: left;
+} */
 
 .profile {
     /* also doing negative margin here. */
     margin-top: -150px;
+}
+
+.profilepic {
+    /* padding: 20px; */
+    background-color: rgb(176, 173, 171);
+    border: 1px solid black;
 }
 
 td {
@@ -40,7 +45,7 @@ td {
 
 img {
     width: 400px;
-    height: 500px;
+    height: 400px;
 }
 
 .activityphoto {

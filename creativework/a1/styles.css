@@ -1,3 +1,5 @@
+/* this is the start of my css stylesheet. I am going for a more chill and simple look, but I included all the required styles. xD */
+
 body {
     background-color: beige;
     color: rgb(57, 57, 57);
@@ -21,6 +23,10 @@ h1 {
 
 h2 {
     font-size: 1.2em;
+}
+
+p {
+    font-size: 1.5em;
 }
 
 /* table {
@@ -48,7 +54,24 @@ img {
     height: 400px;
 }
 
+/* my activity photoes */
 .activityphoto {
     width: 300px;
     height: 300px;
+}
+
+/* bio */
+.bio {
+    border: 1px solid black;
+}
+
+a {
+    color: maroon;
+    font-size: 1em;
+}
+
+/* for all the table headers */
+th {
+    border: 1px solid black;
+    font-size: 1.3em;
 }

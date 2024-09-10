@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Forms...</title>
+    </head>
+
+    <body>
+        <h1>Google Search</h1>
+            <p>search the topic you would like on Google</p>
+            <!-- target where to send the data -->
+            <form action="https://www.google.com/search"> 
+
+                <!-- attach parameter q to the value put in the input. -->
+                <input type="text" name="q">
+
+                <!-- submit -->
+                <input type="submit">
+            </form>
+
+        <br>
+
+        <h1>My custom form</h1>
+            <form action="https://cs-webapps.bu.edu/cgi-bin/util/formmailer.py">
+                q: <input type="text" name="q"><br><br>
+                mailto: <input type="text" name="mailto"><br><br>
+
+                <!-- Can also just do hidden and send directly to my mail -->
+                <!-- <input type="hidden" name="mailto" value="lkk19@bu.edu"> -->
+
+                <input type="submit">
+            </form>
+
+        <h1>My Favorite Things</h1>
+            <!-- POST can actually hide data showing up in the url -->
+            <form method="POST"
+                action="https://cs-webapps.bu.edu/cgi-bin/util/formmailer.py">
+                Favorite Color: <input type="text" name="favorite_color"><br><br>
+
+                <!-- radio buttons are mutually exclusive 
+                note: don't use different name for each element -->
+                Mode of transportation: <br>
+                <input type="radio" name="transportation" value="walk">walk<br>
+                <input type="radio" name="transportation" value="bus">bus<br>
+                <input type="radio" name="transportation" value="train">train<br>
+                <input type="radio" name="transportation" value="car">car<br><br>
+
+                <!-- checkbox buttons (can select multiple) 
+                note: use different name for each element in the group -->
+                Which sports do you play? <br>
+                <input type="checkbox" name="volleyball" value="volleyball">volleyball<br>
+                <input type="checkbox" name="basketball" value="basketball">basketball<br>
+                <input type="checkbox" name="soccer" value="soccer">soccer<br>
+                <input type="checkbox" name="swimming" value="swimming">swimming<br><br>
+
+                How was your day? <br>
+                <textarea name="comments" id="" rows="5" cols="40"></textarea><br><br>
+
+                <!-- drop down menu -->
+                Which state do you live in? <br>
+                <select name="state" id="">
+                    <option value="MA"> Massachusetts</option>
+                    <option value="IN"> Indiana</option>
+                    <option value="IL"> Illinois</option>
+                    <option value="OH"> Ohio</option>
+                </select> <br><br>
+
+                <input type="hidden" name="mailto" value="lkk19@bu.edu">
+                <input type="submit">
+        
+    </body>
+</html>

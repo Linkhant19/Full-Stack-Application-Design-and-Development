@@ -1,0 +1,51 @@
+/* my css stylesheet for a02 */
+
+body {
+    padding: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: azure;
+    text-align: center;
+}
+
+h1 {
+    padding: 10px;
+    /* background-image: linear-gradient(to right, #013407, #7cde77, #36d4f7); */
+
+    /* trying out a picture for the background */
+    background-image: url("creature1.png");
+    background-position: center;
+    color: white;
+    font-size: 5em;
+    margin-bottom: 10px;
+
+    /* I wanted to create an effect of lines around the characters */
+    /* like a sketchbook feeling */
+    text-shadow: 
+        2px 2px 0px black,   
+        -2px 2px 0px black,  
+        2px -2px 0px black, 
+        -2px -2px 0px black; 
+}
+
+p {
+    padding: 10px;
+    color: rgb(36, 54, 56);
+    /* background-color: rgb(23, 38, 34); */
+    font-size: 1.5em;
+    margin-bottom: -10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* for my table */
+table {
+    font-size: 1.1em;
+    border: 10px black solid;
+    padding: 50px;
+    background-color: rgb(186, 245, 245);
+}
+
+td {
+    width: 50vw;
+    padding: 10px;
+    vertical-align: top;
+}

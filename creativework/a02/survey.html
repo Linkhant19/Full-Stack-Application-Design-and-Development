@@ -1,64 +1,161 @@
 <html>
+
+    <!-- a02 survey.html file
+    Written by: Lin Khant Ko
+    Email: lkk19@bu.edu -->
+
     <head>
         <title>Create your own creature</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
+        <h1>Create Your Own Creature</h1>
+        <p>Welcome to my website for creating your own creature. Are you ready?</p>
         <table>
+            <!-- changed method to POST. using the formmailer app. -->
             <form method=POST action="https://cs-webapps.bu.edu/cgi-bin/util/formmailer.py">
-                Name your creature!<input type="text"><br>
-    
-                How small is your creature?
-                <select name="size" id="">
-                    <option value="tiny">very tiny</option>
-                    <option value="small">small like a dog</option>
-                    <option value="medium">medium sized like a human</option>
-                    <option value="big">a little bigger than a human</option>
-                    <option value="very-big">around an elephant</option>
-                    <option value="huge">around a whale</option>
-                    <option value="enormous">BIGGER than a whale</option>
-                </select>
-    
+
+                <!-- First question is name (optional) -->
+                <tr>
+                    <td>Your name (optional): <br><br><br></td>
+                    <td><input type="text"><br><br><br></td>
+                </tr>
+
+                <!-- Second question is where they are from -->
+                <tr>
+                    <td>Where are you from?<br><br><br></td>
+                    <td>
+                        <!-- I got the code snippet from http://www.freeformatter.com/usa-state-list-html-select.html -->
+                        <select>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <br><br><br>
+                    </td>
+                </tr>
+                
+                <!-- Third question: choose an element. Only one answer allowed. -->
+                <tr>
+                    <td>Choose an element for your creature.<br><br><br></td>
+                    <td>
+                        <input type="radio" name="element" value="fire">fire<br>
+                        <input type="radio" name="element" value="ice">ice<br>
+                        <input type="radio" name="element" value="magic">magic<br>
+                        <input type="radio" name="element" value="light">light<br>
+                        <input type="radio" name="element" value="dark">dark
+                        <br><br><br>
+                    </td>
+                </tr>
                 <br>
-                Choose an element for your creature. <br>
-                <input type="radio" name="element" value="fire">fire<br>
-                <input type="radio" name="element" value="ice">ice<br>
-                <input type="radio" name="element" value="magic">magic<br>
-                <input type="radio" name="element" value="light">light<br>
-                <input type="radio" name="element" value="dark">dark<br>
-    
+                
+                <!-- Fourth question: best description. only one answer allowed. -->
+                <tr>
+                    <td>Which best describe your creature? <br><br><br></td>
+                    <td>
+                        <input type="radio" name="description" value="pet">My creature will act as a pet.<br>
+                        <input type="radio" name="description" value="fighter">My creature is tough and will fight for me.<br>
+                        <input type="radio" name="description" value="support">My creature will mainly act as a mental/physical support (healer).<br>
+                        <input type="radio" name="description" value="functional">My creature will help me with chores and daily functions.<br>
+                        <input type="radio" name="description" value="god">My creature will act as a god.<br><br><br>
+                    </td>
+                </tr>
                 <br>
-                Which best describe your creature? <br>
-                <input type="radio" name="description" value="pet">My creature will act as a pet.<br>
-                <input type="radio" name="description" value="fighter">My creature is tough and will fight for me.<br>
-                <input type="radio" name="description" value="support">My creature will mainly act as a mental/physical support (healer).<br>
-                <input type="radio" name="description" value="functional">My creature will help me with chores and daily functions.<br>
-                <input type="radio" name="description" value="god">My creature will act as a god.<br>
-    
+                
+                <!-- Fifth question: body parts. can choose all that apply. -->
+                <tr>
+                    <td class="question">What body parts does your creature have? <br>
+                        (select all that apply) <br><br><br>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="wings" value="wings">wings<br>
+                        <input type="checkbox" name="claws" value="claws">claws<br>
+                        <input type="checkbox" name="tails" value="tails">tails<br>
+                        <input type="checkbox" name="eyes" value="wings">eyes<br>
+                        <input type="checkbox" name="scales" value="wings">scales<br><br><br>
+                    </td>
+                </tr>
                 <br>
-                What body parts does your creature have? <br>
-                (select all that apply) <br>
-                <input type="checkbox" name="wings" value="wings">wings<br>
-                <input type="checkbox" name="claws" value="claws">claws<br>
-                <input type="checkbox" name="tails" value="tails">tails<br>
-                <input type="checkbox" name="eyes" value="wings">eyes<br>
-                <input type="checkbox" name="scales" value="wings">scales<br>
-    
+                
+                <!-- Sixth question: biome of the creature. Can choose all that apply. -->
+                <tr>
+                    <td>
+                        Where can your creature be naturally found? <br>
+                        (select all that apply) <br><br><br>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="swamps" value="swamps">swamps<br>
+                        <input type="checkbox" name="desert" value="deserts">deserts<br>
+                        <input type="checkbox" name="mountains" value="mountains">mountains<br>
+                        <input type="checkbox" name="freezing-biomes" value="freezing-biomes">freezing biomes<br>
+                        <input type="checkbox" name="grasslands" value="grasslands">grasslands<br><br><br>
+                    </td>
+                </tr>
+                
+                <!-- Seventh question: we will give them a place to describe their creature in more detail. -->
+                <tr>
+                    <td>Give a description of your creature. <br> (name/height/specifics) <br><br><br></td>
+                    <td><textarea name="details" id="" rows="5" cols="50"></textarea><br><br><br></td>
+                </tr>
                 <br>
-                Where can your creature be naturally found? <br>
-                (select all that apply) <br>
-                <input type="checkbox" name="swamps" value="swamps">swamps<br>
-                <input type="checkbox" name="desert" value="desert">claws<br>
-                <input type="checkbox" name="mountains" value="mountains">tails<br>
-                <input type="checkbox" name="freezing-biomes" value="freezing-biomes">freezing biomes<br>
-                <input type="checkbox" name="grasslands" value="grasslands">grasslands<br>
-    
-                <br>
-                Give a description of your creature. <br>
-                <textarea name="details" id="" rows="5" cols="50"></textarea>
-    
-                <br> <br>
-                <input type="submit">
+                
+                <!-- Will be mailed to my email. They can't see or change this. -->
+                <input type="hidden" name="mailto" value="lkk19@bu.edu">
+                <tr>
+                    <td><br></td>
+                    <!-- Submit button. -->
+                    <td><input type="submit"></td>
+                </tr>
+                
             </form>
         </table>
         

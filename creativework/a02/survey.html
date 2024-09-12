@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Create your own creature</title>
+    </head>
+
+    <body>
+        <table>
+            <form method=POST action="https://cs-webapps.bu.edu/cgi-bin/util/formmailer.py">
+                Name your creature!<input type="text"><br>
+    
+                How small is your creature?
+                <select name="size" id="">
+                    <option value="tiny">very tiny</option>
+                    <option value="small">small like a dog</option>
+                    <option value="medium">medium sized like a human</option>
+                    <option value="big">a little bigger than a human</option>
+                    <option value="very-big">around an elephant</option>
+                    <option value="huge">around a whale</option>
+                    <option value="enormous">BIGGER than a whale</option>
+                </select>
+    
+                <br>
+                Choose an element for your creature. <br>
+                <input type="radio" name="element" value="fire">fire<br>
+                <input type="radio" name="element" value="ice">ice<br>
+                <input type="radio" name="element" value="magic">magic<br>
+                <input type="radio" name="element" value="light">light<br>
+                <input type="radio" name="element" value="dark">dark<br>
+    
+                <br>
+                Which best describe your creature? <br>
+                <input type="radio" name="description" value="pet">My creature will act as a pet.<br>
+                <input type="radio" name="description" value="fighter">My creature is tough and will fight for me.<br>
+                <input type="radio" name="description" value="support">My creature will mainly act as a mental/physical support (healer).<br>
+                <input type="radio" name="description" value="functional">My creature will help me with chores and daily functions.<br>
+                <input type="radio" name="description" value="god">My creature will act as a god.<br>
+    
+                <br>
+                What body parts does your creature have? <br>
+                (select all that apply) <br>
+                <input type="checkbox" name="wings" value="wings">wings<br>
+                <input type="checkbox" name="claws" value="claws">claws<br>
+                <input type="checkbox" name="tails" value="tails">tails<br>
+                <input type="checkbox" name="eyes" value="wings">eyes<br>
+                <input type="checkbox" name="scales" value="wings">scales<br>
+    
+                <br>
+                Where can your creature be naturally found? <br>
+                (select all that apply) <br>
+                <input type="checkbox" name="swamps" value="swamps">swamps<br>
+                <input type="checkbox" name="desert" value="desert">claws<br>
+                <input type="checkbox" name="mountains" value="mountains">tails<br>
+                <input type="checkbox" name="freezing-biomes" value="freezing-biomes">freezing biomes<br>
+                <input type="checkbox" name="grasslands" value="grasslands">grasslands<br>
+    
+                <br>
+                Give a description of your creature. <br>
+                <textarea name="details" id="" rows="5" cols="50"></textarea>
+    
+                <br> <br>
+                <input type="submit">
+            </form>
+        </table>
+        
+    </body>
+</html>

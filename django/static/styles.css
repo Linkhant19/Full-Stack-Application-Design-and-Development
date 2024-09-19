@@ -1,18 +1,89 @@
 body {
+    /* margin: 0; */
     padding: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    color: white;
+    /* background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #f979d2 100%); */
+
     text-align: center;
+    align-items: center;
+
+    /* background-color: #000000;
+    opacity: 1;
+    background-size: 7px 7px;
+    background-image: repeating-linear-gradient(45deg, #fbdaff 0, #f5ffda 0.4px, #e3c7e2 0, #e7ecbe 50%); */
+
+    /* background-color: #f8d5eb;
+    opacity: 1;
+    background-image:  linear-gradient(30deg, #224745 12%, transparent 12.5%, transparent 87%, #dafffe 87.5%, #dafffe), linear-gradient(150deg, #dafffe 12%, transparent 12.5%, transparent 87%, #dafffe 87.5%, #ffdaf6), linear-gradient(30deg, #dafffe 12%, transparent 12.5%, transparent 87%, #dafffe 87.5%, #dafffe), linear-gradient(150deg, #dafffe 12%, transparent 12.5%, transparent 87%, #dafffe 87.5%, #e8daff), linear-gradient(60deg, #dafffe77 25%, transparent 25.5%, transparent 75%, #dafffe77 75%, #dafffe77), linear-gradient(60deg, #c9848c77 25%, transparent 25.5%, transparent 75%, #ad3d5377 75%, #f1919198);
+    background-size: 800px 1500px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px; */
+
+    /* background-color: #fffeb7;
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, #ffd3fe, #fffeb7), repeating-radial-gradient(circle at center center, #ffd3fe, #ffd3fe, 4px, transparent 8px, transparent 4px);
+    background-blend-mode: multiply; */
+
+    background-color: #fffeb7;
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, #ffd3fe, #fffeb7), repeating-radial-gradient(circle at center center, #ffd3fe, #ffd3fe, 70px, transparent 150px, transparent 70px);
+    background-blend-mode: multiply;
 }
 
+div {
+    background-color: transparent;
+    padding: 20px;
+    /* margin: 20px; */
+}
+
+/* div img {
+    margin: 30px;
+} */
+
 h1 {
-    text-shadow: 
+    color: black;
+    /* text-shadow: 
         2px 2px 0px black,   
         -2px 2px 0px black,  
         2px -2px 0px black, 
-        -2px -2px 0px black; 
+        -2px -2px 0px black;  */
+    text-shadow: 
+        2px 2px 0px white,   
+        -2px 2px 0px white,  
+        2px -2px 0px white, 
+        -2px -2px 0px white; 
+}
+
+p {
+    color: black;
+}
+
+img {
+    margin: 7px;
+    
+    
+    width: 400px;
+    --b: 2px; /* border thickness */
+    --c: #0000 90deg, black 0; /* define the color here */
+    padding: 10px;
+    background:
+        conic-gradient(from 90deg  at top    var(--b) left  var(--b), var(--c)) 0 0,
+        conic-gradient(from 180deg at top    var(--b) right var(--b), var(--c)) 100% 0,
+        conic-gradient(from 0deg   at bottom var(--b) left  var(--b), var(--c)) 0 100%,
+        conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--c)) 100% 100%;
+    background-size: 50px 50px; /* adjust border length here */
+    background-repeat: no-repeat;
+    transition: linear 0.5s;
+}
+
+img:hover {
+    width: 411px;
+    padding: 5px; 
+    
+}
+
+.images {
+    margin-left: -30px;
 }
 
 .time {

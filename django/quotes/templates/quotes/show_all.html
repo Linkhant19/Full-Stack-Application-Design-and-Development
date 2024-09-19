@@ -1,0 +1,29 @@
+<!-- this is the show_all page -->
+
+{% extends "quotes/base.html" %}
+
+{% block content %}
+
+    <!-- Display the quotes -->
+    <div>
+        <h2>Quotes:</h2>
+        <ul>
+            {% for quote in quotes %}
+                <p>{{ quote }}</p>
+            {% endfor %}
+        </ul>
+    </div>
+    
+
+    <!-- Display the images -->
+    <h2>Images</h2>
+    <div class="images">
+        
+        <ul>
+            {% for image in images %}
+                    <img src="{{ image }}" alt="Taylor Swift">
+            {% endfor %}
+        </ul>
+    </div>
+    
+{% endblock %}

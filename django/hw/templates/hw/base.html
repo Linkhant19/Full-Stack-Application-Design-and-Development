@@ -1,0 +1,33 @@
+<!-- hw/templates/hw/base.html
+This is the base page from which all other pages will inherit.
+Our common code. Specific code can be found in separate pages. -->
+
+{% load static %}
+<html>
+    <head>
+        <title>Hello, world!</title>
+        
+        <!-- <link rel="stylesheet" href="/static/styles.css"> -->
+        <!-- this scriptlet will allow it to work on our hosting Heroku server. -->
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+
+    <body>
+
+        <nav>
+            <!-- <a href="/hw">Home</a>
+            <a href="/hw/about">About</a> -->
+
+            <!-- use the scriptlet URL function to look up a URL by name. -->
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+        </nav>
+
+        {% block content %}
+        <!-- our interesting stuff here! -->
+        {% endblock %}
+        <hr>
+        <p class="time">This page was generated at {{current_time}}.</p>
+
+    </body>
+</html>

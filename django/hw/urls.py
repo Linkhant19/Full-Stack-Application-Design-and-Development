@@ -8,4 +8,5 @@ from . import views
 # create a list of URLs for the hw app
 urlpatterns = [
     path(r'', views.home, name='home'), # the first URL. main page
+    path(r'about', views.about, name='about'), # new about page
 ]

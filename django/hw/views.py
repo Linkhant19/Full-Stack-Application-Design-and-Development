@@ -45,3 +45,21 @@ def home(request):
 
     return render(request, template_name, context)
 
+def about(request):
+    """
+    A function to respond to the /hw/about URL.
+    This function will delegate work to an HTML template.
+    """
+
+    # templates is the default folder for django so no need to specify.
+    # this template will present the response.
+    template_name = 'hw/about.html'
+
+    # create a dictionary of context variables
+    context = {
+        'current_time': time.ctime(),
+        
+    }
+
+    return render(request, template_name, context)
+

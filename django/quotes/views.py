@@ -46,8 +46,6 @@ def show_all(request):
     This function will delegate work to an HTML template.
     """
 
-    # templates is the default folder for django so no need to specify.
-    # this template will present the response.
     template_name = 'quotes/show_all.html'
 
     # create a dictionary of context variables
@@ -57,3 +55,23 @@ def show_all(request):
         'images': images_list,
     }
     return render(request, template_name, context)
+
+
+# about : the view to show the about page. about: the view to display information about the famous person whose quotes are shown in this application.
+
+def about(request):
+    """A function to respond to the /hw/about URL.
+    This function will delegate work to an HTML template.
+    """
+
+    template_name = 'quotes/about.html'
+
+    # create a dictionary of context variables
+    context = {
+        'current_time': time.ctime(),
+        'about': "Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. Known for her autobiographical songwriting, artistic reinventions, and cultural impact, Swift is a leading figure in popular music and the subject of widespread public interest. Swift is one of the world's best-selling music artists with an estimated global sale of 200 million records. Seven of her albums have opened with over one million pure sales in a week. She has been listed amongst history's greatest artists by publications such as Rolling Stone, Billboard, and Forbes, as well as the only individual from the arts to have been named the Time Person of the Year (2023). Her accolades include 14 Grammy Awards, a Primetime Emmy Award, 40 American Music Awards, 39 Billboard Music Awards, and 30 MTV Video Music Awards; she has won the Grammy Award for Album of the Year, the MTV Video Music Award for Video of the Year, and the IFPI Global Recording Artist of the Year at least four times each.",
+        'image': images_list[random.randint(0, len(images_list)-1)],
+    }
+
+    return render(request, template_name, context)
+

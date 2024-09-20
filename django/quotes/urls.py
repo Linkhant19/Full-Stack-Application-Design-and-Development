@@ -17,5 +17,5 @@ urlpatterns = [
     path(r'', views.quotes, name='quotes'), # the first URL. main page
     path(r'quote', views.quotes, name='quote'), # new quote page
     path(r'show_all', views.show_all, name='show_all'), # new show_all page
-    # path(r'about', views.about, name='about'), # new about page
+    path(r'about', views.about, name='about'), # new about page
 ]

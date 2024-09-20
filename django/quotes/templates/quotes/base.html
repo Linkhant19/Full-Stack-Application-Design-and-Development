@@ -21,8 +21,11 @@ Our common code. Specific code can be found in separate pages. -->
             <!-- use the scriptlet URL function to look up a URL by name. -->
             <a href="{% url 'quote' %}">Get a Quote!</a>
             <a href="{% url 'show_all' %}">Show All Quotes</a>
-            <!-- <a href="{% url 'about' %}">About</a> -->
+            <a href="{% url 'about' %}">About</a>
         </nav>
+        <br>
+        <hr>
+        
 
         {% block content %}
         <!-- our interesting stuff here! -->

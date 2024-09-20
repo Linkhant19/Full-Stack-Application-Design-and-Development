@@ -3,8 +3,11 @@
 {% extends "quotes/base.html" %}
 
 {% block content %}
-    <h1>hi</h1>
     <div>
+        <h1>Taylor Swift Quotes</h1>
+    </div>
+    
+    <div class="quote">
         <h3>Taylor says: </h3>
         <p>{{quote}}</p>
     </div>
@@ -12,6 +15,7 @@
     <div>
         <img src="{{image}}" alt="Taylor">
     </div>
+    <br>
     
 {% endblock %}
 

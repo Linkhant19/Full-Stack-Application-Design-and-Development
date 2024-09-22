@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.templatetags.static import static
+# from django.templatetags.static import static
+from django.http import HttpRequest, HttpResponse
 import random
 import time
 
@@ -12,16 +13,26 @@ quotes_list = ["I think the perfection of love is that it's not perfect.",
     "Was tonight the night you realized how solitary, how alone you really are, no matter how high you climb. The elevation just makes it colder.",
     "For all of us who have tossed and turned and decided to keep the lanterns lit and go searching. Hoping that just maybe, when the clock strikes twelve ... we'll meet ourselves.",
 ]
-images_list = images_list = [
-    static('images/taylor1.jpg'),
-    static('images/taylor2.jpg'),
-    static('images/taylor3.jpg'),
-    static('images/taylor4.jpg'),
-    static('images/taylor5.jpg'),
-    static('images/taylor6.jpg'),
+
+# images_list = [
+#     static('images/taylor1.jpg'),
+#     static('images/taylor2.jpg'),
+#     static('images/taylor3.jpg'),
+#     static('images/taylor4.jpg'),
+#     static('images/taylor5.jpg'),
+#     static('images/taylor6.jpg'),
+# ]
+
+images_list = [
+    "../static/images/taylor1.jpg",
+    "../static/images/taylor2.jpg",
+    "../static/images/taylor3.jpg",
+    "../static/images/taylor4.jpg",
+    "../static/images/taylor5.jpg",
+    "../static/images/taylor6.jpg",
 ]
 
-def quotes(request):
+def quote(request):
     """A function to respond to the /quote URL.
     This function will delegate work to an HTML template.
     """

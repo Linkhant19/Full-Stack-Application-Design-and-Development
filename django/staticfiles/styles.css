@@ -1,0 +1,117 @@
+body {
+    /* margin: 0; */
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #f979d2 100%); */
+
+    text-align: center;
+    align-items: center;
+
+    /* background-color: #fffeb7;
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, #ffd3fe, #fffeb7), repeating-radial-gradient(circle at center center, #ffd3fe, #ffd3fe, 4px, transparent 8px, transparent 4px);
+    background-blend-mode: multiply; */
+
+    background-color: #fffeb7;
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, #ffd3fe, #fffeb7), repeating-radial-gradient(circle at center center, #ffd3fe, #ffd3fe, 70px, transparent 150px, transparent 70px);
+    background-blend-mode: multiply;
+}
+
+div {
+    background-color: transparent;
+    padding: 20px;
+    padding-bottom: 0px;
+    /* margin: 20px; */
+}
+
+/* div img {
+    margin: 30px;
+} */
+
+h1 {
+    color: black;
+    margin-bottom: -3px;
+    /* text-shadow: 
+        2px 2px 0px black,   
+        -2px 2px 0px black,  
+        2px -2px 0px black, 
+        -2px -2px 0px black;  */
+    text-shadow: 
+        2px 2px 0px white,   
+        -2px 2px 0px white,  
+        2px -2px 0px white, 
+        -2px -2px 0px white; 
+}
+
+h3 {
+    margin-bottom: -30px;
+}
+
+p {
+    color: black;
+    font-size: 3em;
+}
+
+li {
+    font-size: 1.2em;
+    text-align: left;
+}
+
+img {
+    margin: 7px;   
+    width: 400px;
+    --b: 2px; /* border thickness */
+    --c: #0000 90deg, black 0; /* define the color here */
+    padding: 10px;
+    background:
+        conic-gradient(from 90deg  at top    var(--b) left  var(--b), var(--c)) 0 0,
+        conic-gradient(from 180deg at top    var(--b) right var(--b), var(--c)) 100% 0,
+        conic-gradient(from 0deg   at bottom var(--b) left  var(--b), var(--c)) 0 100%,
+        conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--c)) 100% 100%;
+    background-size: 50px 50px; /* adjust border length here */
+    background-repeat: no-repeat;
+    transition: linear 0.5s;
+}
+
+img:hover {
+    width: 411px;
+    padding: 5px; 
+    
+}
+
+.images {
+    margin-left: -30px;
+}
+
+.time {
+    font-size: .9em;
+    font-style: italic;
+}
+
+.copyright {
+    font-size: .9em;
+}
+
+.about {
+    font-size: 1.2em;
+}
+
+.quote {
+    margin-bottom: -20px;
+}
+
+a {
+    color: rgb(108, 57, 71);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 100px;
+}
+
+a:hover {
+    color: white;
+}
+
+a:active {
+    color: white;
+}

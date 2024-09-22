@@ -10,3 +10,4 @@ HTML, CSS, JavaScript, Python, Django
 ## Django applications: 
 
 Get A Quote: https://obscure-falls-84019-c2d49ef75cb4.herokuapp.com/quotes/
+(Python, HTML, CSS, HTML loops, CSS animations, static, django)

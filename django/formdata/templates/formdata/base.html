@@ -1,6 +1,4 @@
-<!-- hw/templates/hw/base.html
-This is the base page from which all other pages will inherit.
-Our common code. Specific code can be found in separate pages. -->
+<!-- formdata/templates/formdata/base.html -->
 
 {% load static %}
 <html>
@@ -14,20 +12,11 @@ Our common code. Specific code can be found in separate pages. -->
 
     <body>
 
-        <nav>
-            <!-- <a href="/hw">Home</a>
-            <a href="/hw/about">About</a> -->
-
-            <!-- use the scriptlet URL function to look up a URL by name. -->
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'about' %}">About</a>
-        </nav>
 
         {% block content %}
         <!-- our interesting stuff here! -->
         {% endblock %}
-        <hr>
-        <p class="time">This page was generated at {{current_time}}.</p>
+        
 
     </body>
 </html>

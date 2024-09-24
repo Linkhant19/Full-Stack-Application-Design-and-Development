@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hw/', include('hw.urls')), # new hw path
     path('quotes/', include('quotes.urls')), # new quotes path
+    path('formdata/', include('formdata.urls')) # new formdata path
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

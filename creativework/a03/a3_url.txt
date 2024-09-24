@@ -1,0 +1,3 @@
+// work and code for this django app is in ../django/quotes
+
+https://obscure-falls-84019-c2d49ef75cb4.herokuapp.com/quotes

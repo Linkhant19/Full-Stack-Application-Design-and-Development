@@ -1,0 +1,25 @@
+<!-- formdata/templates/formdata/base.html -->
+
+{% load static %}
+<html>
+    <head>
+        <title>Form Data</title>
+        <!-- this scriptlet will allow it to work on our hosting Heroku server. -->
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+
+    <body>
+        <nav>
+
+            <!-- use the scriptlet URL function to look up a URL by name. -->
+            <a href="{% url 'order' %}">Order</a>
+        </nav>
+        <br>
+
+        {% block content %}
+        <!-- our interesting stuff here! -->
+        {% endblock %}
+        
+
+    </body>
+</html>

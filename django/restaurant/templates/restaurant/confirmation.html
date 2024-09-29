@@ -1,0 +1,18 @@
+<!-- formdata/templates/formdata/confirmation.html -->
+
+{% extends 'formdata/base.html' %}
+
+{% block content %}
+    <div>
+        <h1>confirmation</h1>
+
+        <p>
+            Hi, {{name}}! Thanks for ordering!
+        </p>
+        
+        <p>
+            Your order will be ready at: {{time}}.
+        </p>
+    </div>
+
+{% endblock %}

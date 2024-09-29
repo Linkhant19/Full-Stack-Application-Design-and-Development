@@ -1,18 +1,29 @@
 <!-- formdata/templates/formdata/confirmation.html -->
 
-{% extends 'formdata/base.html' %}
+{% extends 'restaurant/base.html' %}
 
 {% block content %}
     <div>
         <h1>confirmation</h1>
 
-        <p>
-            Hi, {{name}}! Thanks for ordering!
-        </p>
-        
-        <p>
-            Your order will be ready at: {{time}}.
-        </p>
+        <div class="reciept">
+            <p>
+                Hi, {{name}}! Thanks for ordering!
+            </p>
+
+            <p>
+                Total price: {{total_price}}
+            </p>
+
+            <p>
+                Special Instructions: {{details}}
+            </p>
+
+            <p>
+                <!-- increase time by 1 hour. -->
+                Your order will be ready in an hour at: {{ ready_time }}.
+            </p>
+        </div>
     </div>
 
 {% endblock %}

@@ -1,6 +1,6 @@
 <!-- formdata/templates/formdata/form.html -->
 
-{% extends 'formdata/base.html' %}
+{% extends 'restaurant/base.html' %}
 
 {% block content %}
 <div>
@@ -35,19 +35,20 @@
                 <td class="question">Select your items: <br><br><br>
                 </td>
                 <td>
-                    <input type="checkbox" name="wings" value="wings">wings<br>
-                    <input type="checkbox" name="claws" value="claws">claws<br>
-                    <input type="checkbox" name="tails" value="tails">tails<br>
-                    <input type="checkbox" name="eyes" value="wings">eyes<br>
-                    <input type="checkbox" name="scales" value="wings">scales<br><br><br>
+                    <!-- I will call the values in views.py file to calculate the total price. -->
+                    <input type="checkbox" name="wings" value="12.99">chicken wings $12.99<br>
+                    <input type="checkbox" name="sushi" value="15.99">sushi $15.99<br>
+                    <input type="checkbox" name="mario" value="34.99">mario mushroom soup $38.99<br>
+                    <input type="checkbox" name="brain" value="26.99">goat brain $26.99<br>
+                    <input type="checkbox" name="soup" value="6.99">Linny's secret soup $6.99<br><br><br>
                 </td>
             </tr>
             <br>
             
-            <!-- Sixth question: biome of the creature. Can choose all that apply. -->
+            <!-- Our random special item. -->
             <tr>
                 <td>
-                    Our Daily Special! <br><br><br>
+                    Our Daily Special! ($100) <br><br><br>
                 </td>
                 <td>
                     <input type="checkbox" name="special" value="special">{{ special_item }}<br><br><br>
@@ -55,15 +56,13 @@
             </tr>
             <br>
             
-            <!-- Seventh question: we will give them a place to describe their creature in more detail. -->
+            <!-- A place for customers to input special instructions. -->
             <tr>
                 <td>Any Special Instructions? <br> (allergies/restrictions/spice_levels) <br><br><br></td>
                 <td><textarea name="details" id="" rows="5" cols="50"></textarea><br><br><br></td>
             </tr>
             <br>
             
-            <!-- Will be mailed to my email. They can't see or change this. -->
-            <input type="hidden" name="mailto" value="lkk19@bu.edu">
             <tr>
                 <td><br></td>
                 <!-- Submit button. -->

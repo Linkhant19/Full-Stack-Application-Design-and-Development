@@ -1,17 +1,17 @@
-<!-- formdata/templates/formdata/base.html -->
+<!-- formdata/templates/restaurant/base.html -->
 
 {% load static %}
 <html>
     <head>
-        <title>Form Data</title>
+        <title>Restaurant</title>
         <!-- this scriptlet will allow it to work on our hosting Heroku server. -->
-        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <link rel="stylesheet" href="{% static 'restaurant.css' %}">
     </head>
 
     <body>
         <nav>
-
             <!-- use the scriptlet URL function to look up a URL by name. -->
+            <a href="{% url 'main' %}">Main</a>
             <a href="{% url 'order' %}">Order</a>
         </nav>
         <br>
@@ -19,7 +19,10 @@
         {% block content %}
         <!-- our interesting stuff here! -->
         {% endblock %}
-        
+        <br>
+        <hr>
+        <p class="copyright">Designed by <br>Lin Khant Ko</p>
+        <p class="time">This page was generated at {{current_time}}.</p>
 
     </body>
 </html>

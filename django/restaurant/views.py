@@ -66,6 +66,18 @@ def confirmation(request):
         else:
             mario_price = 0
 
+        # for my mario add-ons
+        if mario:
+            if request.POST.get('mario-addon-1'):
+                mario_price += 2.99
+                order_list.append("    + princess peach scent")
+            if request.POST.get('mario-addon-2'):
+                mario_price += 4.99
+                order_list.append("    + yoshi feet")
+            if request.POST.get('mario-addon-3'):
+                mario_price += 3.99
+                order_list.append("    + birdo powder")
+
         # for goat brain
         brain = request.POST.get('brain')
         if brain:

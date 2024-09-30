@@ -39,9 +39,12 @@ p {
 
 }
 
+/* for my reciept */
+
 .reciept {
     background-color: white;
     /* border: black 10px solid; */
+    /* to give a 3d effect */
     border: 4mm ridge rgba(220, 178, 50, 0.6);
     padding: 10px;
     margin: 300px;
@@ -88,6 +91,8 @@ nav {
     
 }
 
+/* for the header nav links */
+
 a {
     color: rgb(108, 57, 71);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -100,6 +105,10 @@ a:hover {
     color: white;
     font-size: 2.5em;
 }
+
+
+
+/* for my footer */
 
 .time {
     font-size: .9em;
@@ -135,6 +144,7 @@ img:hover {
 }
 
 /* Mario Mushroom Soup Add-ons */
+/* disable the addons until we choose mario */
 
 #mario-addons {
     display: none;

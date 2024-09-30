@@ -40,39 +40,53 @@ def confirmation(request):
     if request.POST:
         # read the form data into python variables:
         name = request.POST['name']
+        order_list = []
         
         # all the dishes
         wings = request.POST.get('wings')
         if wings:
             wings_price = 12.99
-            wings_name = "chicken wings"
+            order_list.append("chicken wings")
         else:
             wings_price = 0
 
-        
+        # for sushi
         sushi = request.POST.get('sushi')
         if sushi:
             sushi_price = 15.99
+            order_list.append("sushi")
         else:
             sushi_price = 0
+
+        # for mario mushroom soup
         mario = request.POST.get('mario')
         if mario:
             mario_price = 34.99
+            order_list.append("mario mushroom soup")
         else:
             mario_price = 0
+
+        # for goat brain
         brain = request.POST.get('brain')
         if brain:
             brain_price = 26.99
+            order_list.append("goat brain")
         else:
             brain_price = 0
+
+        # for Linny's secret soup
         soup = request.POST.get('soup')
         if soup:
             soup_price = 6.99
+            order_list.append("Linny's secret soup")
         else:
             soup_price = 0
+
+        # special
         special = request.POST.get('special')
         if special:
             special_price = 100
+            order_list.append(special)
         else:
             special_price = 0
 
@@ -92,8 +106,12 @@ def confirmation(request):
             'ready_time': time.ctime(time.time() + random.randint(1800, 3600)),
 
             # calculate the total price
-            'total_price': wings_price + sushi_price + mario_price + brain_price + soup_price + special_price,
+            # round to two decimal places
+            'total_price': round(wings_price + sushi_price + mario_price + brain_price + soup_price + special_price, 2),
             'details': instructions,
+
+            # return the order list
+            'order_list': order_list,
         }
 
         # generate a response

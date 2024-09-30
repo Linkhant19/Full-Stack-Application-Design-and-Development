@@ -41,7 +41,25 @@ p {
 
 .reciept {
     background-color: white;
-    margin: 50px;
+    /* border: black 10px solid; */
+    border: 4mm ridge rgba(220, 178, 50, 0.6);
+    padding: 10px;
+    margin: 300px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.reciept p, h2 {
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.1em;
+    text-shadow: none;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.reciept h2 {
+    font-size: 1.5em;
 }
 
 /* for my table */
@@ -114,4 +132,24 @@ img:hover {
 	100% {
 		opacity: 1;
 	}
+}
+
+/* Mario Mushroom Soup Add-ons */
+
+#mario-addons {
+    display: none;
+}
+
+#mario:checked ~ #mario-addons {
+    display: block;
+}
+
+#mario-addons input[type="checkbox"] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#mario:checked ~ #mario-addons input[type="checkbox"] {
+    opacity: 1;
+    pointer-events: auto;
 }

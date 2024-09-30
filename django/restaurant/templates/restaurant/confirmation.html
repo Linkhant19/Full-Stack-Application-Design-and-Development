@@ -8,21 +8,34 @@
 
         <div class="reciept">
             <p>
-                Hi, {{name}}! Thanks for ordering!
+                Hi, {{name}}! Thanks for ordering from <strong>Linny's</strong>!
             </p>
 
             <p>
-                Total price: {{total_price}}
+                <strong>Your order is as follows: </strong>
+                <br>
+                <!-- we use a for loop to iterate through the order. -->
+                {% for item in order_list %}
+                    {{item}} <br>
+                {% endfor %}
             </p>
 
+            <!-- the total price -->
             <p>
-                Special Instructions: {{details}}
+                <strong>Total price: </strong> {{total_price}}
+            </p>
+
+            <!-- special instructions -->
+            <!-- if no special instructions, display "No special instructions." -->
+            <p>
+                <strong>Special Instructions: </strong> {{details}}
             </p>
 
             <p>
                 <!-- increase time by 1 hour. -->
                 Your order will be ready in an hour at: {{ ready_time }}.
             </p>
+            <br>
         </div>
     </div>
 

@@ -38,7 +38,13 @@
                     <!-- I will call the values in views.py file to calculate the total price. -->
                     <input type="checkbox" name="wings" value="12.99">chicken wings $12.99<br>
                     <input type="checkbox" name="sushi" value="15.99">sushi $15.99<br>
-                    <input type="checkbox" name="mario" value="34.99">mario mushroom soup $38.99<br>
+                    <input type="checkbox" name="mario" value="34.99" id="mario">mario mushroom soup $38.99<br>
+                        <!-- I am going to add extra add ons for mario mushroom soup. They are only clickable when you choose mario mushroom soup -->
+                        <div id="mario-addons">
+                            <input type="checkbox" name="mario-addon-1" value="2.99">add princess peach scent $2.99<br>
+                            <input type="checkbox" name="mario-addon-2" value="1.99">add yoshi feet $4.99<br>
+                            <input type="checkbox" name="mario-addon-3" value="3.99">add birdo powder $3.99<br>
+                        </div>
                     <input type="checkbox" name="brain" value="26.99">goat brain $26.99<br>
                     <input type="checkbox" name="soup" value="6.99">Linny's secret soup $6.99<br><br><br>
                 </td>
@@ -51,7 +57,7 @@
                     Our Daily Special! ($100) <br><br><br>
                 </td>
                 <td>
-                    <input type="checkbox" name="special" value="special">{{ special_item }}<br><br><br>
+                    <input type="checkbox" name="special" value="{{ special_item }}">{{ special_item }}<br><br><br>
                 </td>
             </tr>
             <br>

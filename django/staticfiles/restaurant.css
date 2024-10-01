@@ -1,0 +1,165 @@
+/* for my restaurant css */
+
+body {
+    padding: 20px;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #c4883f;
+    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+    text-align: center;
+}
+
+h1 {
+    margin: 0px;
+    background-position: center;
+    color: white;
+    font-size: 5em;
+
+    /* I wanted to create an effect of lines around the characters */
+    /* like a sketchbook feeling */
+    text-shadow: 
+        2px 2px 0px black,   
+        -2px 2px 0px black,  
+        2px -2px 0px black, 
+        -2px -2px 0px black; 
+}
+
+p {
+    padding: 10px;
+    color: white;
+    /* background-color: rgb(23, 38, 34); */
+    font-size: 1.5em;
+    margin-bottom: -10px;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 
+        1px 1px 0px black,   
+        -1px 1px 0px black,  
+        1px -1px 0px black, 
+        -1px -1px 0px black; 
+
+}
+
+/* for my reciept */
+
+.reciept {
+    background-color: white;
+    /* border: black 10px solid; */
+    /* to give a 3d effect */
+    border: 4mm ridge rgba(220, 178, 50, 0.6);
+    padding: 10px;
+    margin: 300px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.reciept p, h2 {
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.1em;
+    text-shadow: none;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.reciept h2 {
+    font-size: 1.5em;
+}
+
+/* for my table */
+table {
+    font-size: 1.1em;
+    border: 10px black solid;
+    padding: 50px;
+    background-color: white;
+}
+
+td {
+    width: 50vw;
+    padding: 10px;
+    vertical-align: top;
+}
+
+img {
+    width: 70vw;
+    border: 10px black solid;
+}
+
+nav {
+    /* background-color: #442121; */
+    padding: 20px;
+    margin: 0px;
+    
+}
+
+/* for the header nav links */
+
+a {
+    color: rgb(108, 57, 71);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 100px;
+    font-size: 2em;
+    transition: font-size 0.5s;
+}
+
+a:hover {
+    color: white;
+    font-size: 2.5em;
+}
+
+
+
+/* for my footer */
+
+.time {
+    font-size: .9em;
+    font-style: italic;
+}
+
+.copyright {
+    font-size: .9em;
+}
+
+/* Flashing */
+/* I got this snippet from https://codepen.io/nxworld/pen/ZYNOBZ */
+img:hover {
+	opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Mario Mushroom Soup Add-ons */
+/* disable the addons until we choose mario */
+
+#mario-addons {
+    display: none;
+}
+
+#mario:checked ~ #mario-addons {
+    display: block;
+}
+
+#mario-addons input[type="checkbox"] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#mario:checked ~ #mario-addons input[type="checkbox"] {
+    opacity: 1;
+    pointer-events: auto;
+}

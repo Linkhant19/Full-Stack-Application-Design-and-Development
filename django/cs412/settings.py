@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "quotes", # new hw app
     "formdata", # new formdata app
     "restaurant", # new restaurant app
+    "blog", # new blog app
 ]
 
 MIDDLEWARE = [

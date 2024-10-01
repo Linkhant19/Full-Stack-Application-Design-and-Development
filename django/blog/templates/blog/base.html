@@ -1,0 +1,14 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Our Blog</title>
+        <!-- not the best style sheet. I am just reusing the one I already have. -->
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+        {% block content %}
+        <!-- our interesting stuff here! -->
+        {% endblock %}
+    </body>
+</html>

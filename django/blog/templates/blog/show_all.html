@@ -1,5 +1,7 @@
 <!-- blog/templates/blog/show_all.html -->
+{% extends "blog/base.html" %}
 
+{% block content %}
 <h1>Showing all Articles!</h1>
 
 <!-- print out the context variable called articles. -->
@@ -10,9 +12,12 @@
     <div>
         <h2>{{ a.title }}</h2>
         <h3>by {{ a.author }} at {{ a.published }}</h3>
+        <img src="{{ a.image_url }}" alt="{{ a.image_url }}">
         <p>
             {{ a.text }}
         </p>
     </div>
     {% endfor %}
 </div>
+
+{% endblock %}

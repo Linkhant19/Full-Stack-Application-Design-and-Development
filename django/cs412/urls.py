@@ -26,4 +26,5 @@ urlpatterns = [
     path('formdata/', include('formdata.urls')), # new formdata path
     path('restaurant/', include('restaurant.urls')), # new restaurant path
     path('blog/', include('blog.urls')), # new blog path
+    path('mini_fb/', include('mini_fb.urls')), # new mini_fb path
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

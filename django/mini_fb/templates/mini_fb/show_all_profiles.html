@@ -1,0 +1,31 @@
+<!-- mini_fb/templates/mini_fb/show_all_profiles.html -->
+{% extends "mini_fb/base.html" %}
+
+{% block content %}
+<h1>MiniFacebook</h1>
+
+<!-- print out the context variable called profiles. -->
+<!-- {{ profiles }} -->
+
+<div class="container">
+    {% for p in profiles %}
+    <div class="child">
+        <!-- The Profile model include the following data attributes: 
+        first name, last name, city, email address, and a profile image url. -->
+
+        <h2>{{ p.first_name }} {{ p.last_name }}</h2>
+        <br>
+        <img src="{{ p.image_url }}" alt="{{ p.image_url }}">
+        <br>
+        <br>
+        <h3> {{ p.city }}</h3>
+        
+        <p>
+            {{ p.email }}
+        </p>
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

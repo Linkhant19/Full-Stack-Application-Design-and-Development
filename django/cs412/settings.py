@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "formdata", # new formdata app
     "restaurant", # new restaurant app
     "blog", # new blog app
+    "mini_fb", # new mini_fb app
 ]
 
 MIDDLEWARE = [

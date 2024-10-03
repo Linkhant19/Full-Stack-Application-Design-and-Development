@@ -1,5 +1,9 @@
 /* mini fb css */
 
+/* importing the google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Nabla&family=Sixtyfour+Convergence&family=Space+Grotesk:wght@300..700&display=swap');
 /* I want it to have all the profiles in a nice container with display flex. */
 
 .container {
@@ -20,25 +24,96 @@ img {
 
 .child {
     /* I want child to have determine the flex items size. same size for each child. */
-    flex-basis: 400px;
-    background-color: aquamarine;
-    border: 1px solid black;
+    flex-basis: 430px;
+    background-color: white;
+    /* border: 1px solid black; */
+    border: 8px inset #fff1f1;
     /* align all items to center */
     align-items: center;
     text-align: center;
     padding: 10px;
+    transition: border 1s;
+
+    /* I got this code from https://css-pattern.com/ */
+    --s: 1px; /* control the size*/
+    --c1: #a4eaf4;
+    --c2: #c7fffe;
+    
+    --c:var(--c1) calc(100% - 2px),#0000;
+    --r:calc(2.414*var(--s));
+    --p:calc(1.414*var(--s));
+    --g:radial-gradient(var(--s),var(--c));
+    background:
+      radial-gradient(var(--r) at 0    0   ,var(--c)),
+      radial-gradient(var(--r) at 0    100%,var(--c)),
+      radial-gradient(var(--r) at 100% 0   ,var(--c)),
+      radial-gradient(var(--r) at 100% 100%,var(--c)),
+      var(--g),var(--g),var(--g),var(--g) var(--c2);
+    background-position: 
+      var(--r) var(--r),0 var(--p),var(--p) 0,
+      calc(-1*var(--s)) calc(-1*var(--s));
+    background-size: calc(2*var(--r)) calc(2*var(--r));
+}
+
+.child:hover {
+    border: 15px inset #ef4040;
 }
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
+    /* background-color: aquamarine; */
 }
 
+/* I got this code from https://css-pattern.com/ */
+html {
+    --s: 300px; /* control the size*/
+    --c1: #a4eaf4;
+    --c2: #c7fffe;
+    
+    --c:var(--c1) calc(100% - 2px),#0000;
+    --r:calc(2.414*var(--s));
+    --p:calc(1.414*var(--s));
+    --g:radial-gradient(var(--s),var(--c));
+    background:
+      radial-gradient(var(--r) at 0    0   ,var(--c)),
+      radial-gradient(var(--r) at 0    100%,var(--c)),
+      radial-gradient(var(--r) at 100% 0   ,var(--c)),
+      radial-gradient(var(--r) at 100% 100%,var(--c)),
+      var(--g),var(--g),var(--g),var(--g) var(--c2);
+    background-position: 
+      var(--r) var(--r),0 var(--p),var(--p) 0,
+      calc(-1*var(--s)) calc(-1*var(--s));
+    background-size: calc(2*var(--r)) calc(2*var(--r));
+}
+
+
+
 h1 {
-    font-size: 3em;
-    color:blue;
+    font-size: 5em;
+    font-family: "Nabla";
+    color:rgb(30, 105, 217);
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-family: "Space Grotesk";
+    text-shadow: 
+        1px 1px 0px black,   
+        -1px 1px 0px black,  
+        1px -1px 0px black, 
+        -1px -1px 0px black; 
+    /* color:rgb(255, 153, 0); */
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    font-family: "Space Grotesk";
 }
 
 .copyright {

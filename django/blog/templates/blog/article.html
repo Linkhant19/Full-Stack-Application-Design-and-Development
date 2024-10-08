@@ -1,0 +1,43 @@
+<!-- blog/templates/blog/article.html -->
+{% extends "blog/base.html" %}
+
+{% block content %}
+<h1>{{ article.title }}</h1>
+
+<!-- print out the context variable called articles. -->
+<!-- {{ articles }} -->
+
+<main>
+    <h2>{{ article.title }}</h2>
+    <h3>by {{ article.author }} at {{ article.published }}</h3>
+
+    <img src="{{ article.image_url }}" alt="{{ article.image_url }}">
+    <p>
+        {{ article.text }}
+    </p>
+
+    <div>
+        <h2>Comments</h2>
+        <!-- call the Article's get_comments() method -->
+        <!-- note that () are not needed here. -->
+        <!-- {{ article.get_comments }}  -->
+
+        {% if article.get_comments %}
+            {% for c in article.get_comments %}
+            <div>
+                <strong>by {{ c.author }} and {{ c.published }}</strong>
+                <p>
+                    {{ c.text }}
+                </p>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div>
+                <p>No comments yet.</p>
+            </div>
+        {% endif %}
+
+    </div>
+</main>
+
+{% endblock %}

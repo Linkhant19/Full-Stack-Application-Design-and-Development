@@ -4,9 +4,13 @@
     <head>
         <title>Our Blog</title>
         <!-- not the best style sheet. I am just reusing the one I already have. -->
-        <link rel="stylesheet" href="{% static 'restaurant.css' %}">
+        <link rel="stylesheet" href="{% static 'mini_fb.css' %}">
     </head>
     <body>
+        <nav>
+            <a href="{% url 'show_all_articles' %}">Show All Articles</a>
+            <a href="{% url 'random' %}">Random</a>
+        </nav>
         {% block content %}
         <!-- our interesting stuff here! -->
         {% endblock %}

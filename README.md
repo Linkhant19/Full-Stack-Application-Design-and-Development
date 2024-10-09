@@ -14,3 +14,6 @@ Get A Quote: https://obscure-falls-84019-c2d49ef75cb4.herokuapp.com/quotes/
 
 Restaurant Online Order: https://obscure-falls-84019-c2d49ef75cb4.herokuapp.com/restaurant/
 <br> (<strong>new techniques:</strong> HTML forms, CSS ~, calculations, time)
+
+Mini Facebook one-page app: https://obscure-falls-84019-c2d49ef75cb4.herokuapp.com/mini_fb/
+<br> (<strong>new techniques:</strong> admin, models, migrations, database)

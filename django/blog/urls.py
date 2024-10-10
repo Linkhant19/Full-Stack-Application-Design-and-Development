@@ -9,6 +9,8 @@ from . import views
 urlpatterns = [
     # for a class-based view, use .as_view()
     path(r'', views.RandomArticleView.as_view(), name='random'),
-    path(r'show_all_articles', views.ShowAllView.as_view(), name='show_all_articles'), # the first URL. main page
+    path(r'show_all_articles', views.ShowAllView.as_view(), name='show_all_articles'), 
     path(r'article/<int:pk>', views.ArticleView.as_view(), name='article'),
+    # path(r'create_comment', views.CreateCommentView.as_view(), name='create_comment'),
+    path(r'article/<int:pk>/create_comment', views.CreateCommentView.as_view(), name='create_comment'),
 ]

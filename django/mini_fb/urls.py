@@ -6,5 +6,8 @@ from . import views
 
 # create a list of URLs for the mini_fb app
 urlpatterns = [
-    path(r'', views.ShowAllProfilesView.as_view(), name='show_all_fb'), # the first URL. main page
+    path(r'', views.ShowAllProfilesView.as_view(), name='show_all_profiles'), # the first URL. main page
+    path(r'profile/<int:pk>', views.ShowProfilePageView.as_view(), name='show_profile'), # new show_profile path with pk
+    path(r'create_profile', views.CreateProfileView.as_view(), name='create_profile'),
+    path(r'profile/<int:pk>/create_status', views.CreateStatusMessageView.as_view(), name='create_status'),
 ]

@@ -1,0 +1,37 @@
+<!-- Create the template file show_profile.html, which inherits from base.html. This template will render a profile page for one user (i.e., a single Profile record). -->
+
+{% extends "mini_fb/base.html" %}
+
+{% block content %}
+    <h2>{{ profile.first_name }} {{ profile.last_name }}</h2>
+    <br>
+    <div class="container">
+        <div class="child">
+            
+            <br>
+            <img src="{{ profile.image_url }}" alt="{{ profile.image_url }}">
+            <br>
+            <br>
+            <h3> {{ profile.city }}</h3>
+            
+            <p>
+                {{ profile.email }}
+            </p>
+            <hr>
+            <h3>Status Messages</h3>
+            <p><a href="{% url 'create_status' profile.pk %}">add a status message</a></p>
+            {% if profile.get_status_messages %}
+                {% for m in profile.get_status_messages %}
+                <p>
+                    {{ m.message }} at {{ m.timestamp }}
+                </p>
+                {% endfor %}
+            {% else %}
+                <p>No status messages</p>
+            {% endif %}
+
+
+        </div>
+    </div>
+
+{% endblock %}

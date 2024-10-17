@@ -7,6 +7,10 @@
         <link rel="stylesheet" href="{% static 'mini_fb.css' %}">
     </head>
     <body>
+        <nav class="header">
+            <a href="{% url 'show_all_profiles' %}">Show All Profiles</a>
+            <a href="{% url 'create_profile' %}">Create Profile</a>
+        </nav>
         {% block content %}
         <!-- our interesting stuff here! -->
         {% endblock %}

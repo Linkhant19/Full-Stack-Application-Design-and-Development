@@ -116,6 +116,49 @@ p {
     font-family: "Space Grotesk";
 }
 
+nav {
+    margin-top: 50px;
+    
+    /* margin-bottom: 20px; */
+    font-family: "Space Grotesk";
+    font-size: 1.5em;
+    
+}
+
+/* for my links */
+a {
+    text-decoration: none;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: black;
+    text-shadow: 
+        1px 1px 0px white,   
+        -1px 1px 0px white,  
+        1px -1px 0px white, 
+        -1px -1px 0px white; 
+    transition: color 1s;
+}
+
+a:hover {
+    color: rgb(255, 153, 0);
+}
+
+/* for the forms */
+table {
+    margin: 50px;
+    margin-left: 120px;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 10px;
+}
+
 .copyright {
     font-size: .9em;
 }

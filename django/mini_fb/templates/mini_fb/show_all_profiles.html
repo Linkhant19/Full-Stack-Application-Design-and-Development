@@ -15,7 +15,12 @@
 
         <h2>{{ p.first_name }} {{ p.last_name }}</h2>
         <br>
-        <img src="{{ p.image_url }}" alt="{{ p.image_url }}">
+
+        <!-- use object instance.pk -->
+        <a href="{% url 'show_profile' p.pk %}"> 
+            <img src="{{ p.image_url }}" alt="{{ p.image_url }}">
+        </a>
+
         <br>
         <br>
         <h3> {{ p.city }}</h3>

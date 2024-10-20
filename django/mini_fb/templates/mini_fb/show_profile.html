@@ -17,6 +17,9 @@
             <p>
                 {{ profile.email }}
             </p>
+
+            <p>
+                <a href="{% url 'update_profile' profile.pk %}">Update Profile</a>
             <hr>
             <h3>Status Messages</h3>
             <p><a href="{% url 'create_status' profile.pk %}">add a status message</a></p>
@@ -25,9 +28,13 @@
                     <p>
                         {{ status.message }} at {{ status.timestamp }}
                     </p>
+
+                    <!-- Display all images for this status message -->
                     {% for img in status.get_images %}
                         <img src='{{img.image_file.url}}' alt='{{img.image_file.url}}'>
                     {% endfor %}
+                    <!-- DELETE button -->
+                    <p><a href="{% url 'delete_status' status.pk %}">Delete</a></p>
                 {% endfor %}
                 
             {% else %}

@@ -7,7 +7,7 @@ from django.urls import reverse
 
 from . models import *
 from . forms import *
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 import random
 
 # this is a class based view
@@ -96,3 +96,26 @@ class CreateStatusMessageView(CreateView):
         '''return the URL to redirect to after successful create'''
 
         return reverse('show_profile', kwargs={'pk': self.kwargs['pk']})
+
+
+class UpdateProfileView(UpdateView):
+    '''
+    class-based view called UpdateProfileView, which inherits from the generic UpdateView class.
+    '''
+    model = Profile
+    form_class = UpdateProfileForm
+    template_name = 'mini_fb/update_profile_form.html'
+
+
+class DeleteStatusMessageView(DeleteView):
+    '''
+    class-based view called DeleteStatusMessageView, which inherits from the generic DeleteView class.
+    '''
+    model = StatusMessage
+    template_name = 'mini_fb/delete_status_form.html'
+    context_object_name = 'status'
+
+    def get_success_url(self) -> str:
+        '''return the URL to redirect to after successful delete'''
+        return reverse('show_profile', kwargs={'pk': self.object.profile.pk})
+        # return reverse('show_profile', kwargs={'pk': self.kwargs['pk']})

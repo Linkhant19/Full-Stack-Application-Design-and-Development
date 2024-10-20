@@ -1,13 +1,14 @@
-<!-- mini_fb/templates/mini_fb/create_status_form.html -->
+<!-- blog/templates/blog/create_comment_form.html -->
 
-{% extends 'mini_fb/base.html' %}
+{% extends 'blog/base.html' %}
 
 {% block content %}
 
-<h2>Create a new Status</h2>
+<h2>Add an Article</h2>
 
 <form method="POST" enctype="multipart/form-data">
     <!-- display the form (context variable) -->
+    <!-- {{ form }} -->
     <table>
         {{ form.as_table }}
     
@@ -15,19 +16,19 @@
     <tr>
         <td></td>
         <td>
-            <input type="file" name = "files" multiple />
-            <br>
             <!-- submit button -->
-            <input type="submit" name="Post">
+            <input type="submit" name="Create Article">
             {% csrf_token %}
         </form>
         <!-- NOTE: this is a separate form! -->
-        <form action="{% url 'show_profile' profile.pk %}">
+        <form action="{% url 'show_all' %}">
             <input type="submit" name="Cancel" value="Cancel">
         </form>
         </td>
     </tr>
     
     </table>
+    
+
 
 {% endblock %}

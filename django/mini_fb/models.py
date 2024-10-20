@@ -43,3 +43,24 @@ class StatusMessage(models.Model):
     def __str__(self):
         '''Return a string representation of the object.'''
         return f"{self.message}"
+
+    def get_images(self):
+        '''Retrieve all comments for this status.'''
+        # use the ORM to filter Images where this object is the FK
+        images = Image.objects.filter(status_message=self)
+        return images
+
+
+class Image(models.Model):
+    '''Encapsulate the data for an image model.'''
+
+    image_file = models.ImageField(blank=True)
+    timestamp = models.DateTimeField(auto_now=True)
+    status_message = models.ForeignKey("StatusMessage", on_delete=models.CASCADE)
+
+    def __str__(self):
+        '''Return a string representation of the object.'''
+        return f"image for '{self.status_message}' message for {self.status_message.profile}"
+
+
+

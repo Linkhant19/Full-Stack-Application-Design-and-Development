@@ -15,7 +15,9 @@
 
         <!-- use object instance.pk -->
         <a href="{% url 'article' a.pk %}"> 
-            <img src="{{ a.image_url }}" alt="{{ a.image_url }}">
+            <!-- <img src="{{ a.image_url }}" alt="{{ a.image_url }}"> -->
+
+            <img src="{{ a.image_file.url }}" alt="">
         </a>
         <h3>by {{ a.author }} at {{ a.published }}</h3>
         

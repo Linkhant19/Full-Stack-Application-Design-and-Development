@@ -91,3 +91,16 @@ class CreateCommentView(CreateView):
         # add the article to the context data
         context['article'] = article
         return context
+
+class CreateArticleView(CreateView):
+    '''View to create a new Article instance.'''
+
+    form_class = CreateArticleForm
+    template_name = 'blog/create_article_form.html'
+
+    def form_valid(self, form):
+        '''Add some debugging statements.'''
+        print(f'CreateArticleView.form_valid: form.cleaned_data={form.cleaned_data}')
+
+        # delegate work to superclass
+        return super().form_valid(form)

@@ -77,6 +77,17 @@ class CreateStatusMessageView(CreateView):
         # form.instance is the new Comment
         form.instance.profile = profile
 
+        # modify the form_valid method to handle the uploading of files as follows:
+        sm = form.save()
+        # read the file from the form:
+        files = self.request.FILES.getlist('files')
+
+        # loop through the files and save them
+        for file in files:
+        # create a new Image object
+            img = Image(status_message=sm, image_file=file)
+            img.save()
+
         # delegate work to the superclass version of this method
         return super().form_valid(form)
 

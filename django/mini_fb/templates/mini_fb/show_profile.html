@@ -21,12 +21,17 @@
             <h3>Status Messages</h3>
             <p><a href="{% url 'create_status' profile.pk %}">add a status message</a></p>
             {% if profile.get_status_messages %}
-                {% for m in profile.get_status_messages %}
-                <p>
-                    {{ m.message }} at {{ m.timestamp }}
-                </p>
+                {% for status in profile.get_status_messages %}
+                    <p>
+                        {{ status.message }} at {{ status.timestamp }}
+                    </p>
+                    {% for img in status.get_images %}
+                        <img src='{{img.image_file.url}}' alt='{{img.image_file.url}}'>
+                    {% endfor %}
                 {% endfor %}
+                
             {% else %}
+            
                 <p>No status messages</p>
             {% endif %}
 

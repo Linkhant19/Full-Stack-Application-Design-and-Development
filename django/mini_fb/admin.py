@@ -4,3 +4,4 @@ from django.contrib import admin
 from .models import *
 admin.site.register(Profile) # we want to access the Profile model from the admin
 admin.site.register(StatusMessage) # we want to access the StatusMessage model from the admin
+admin.site.register(Image) # we want to access the Image model from the admin

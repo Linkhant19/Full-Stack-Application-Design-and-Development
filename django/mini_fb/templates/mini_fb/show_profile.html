@@ -3,11 +3,15 @@
 {% extends "mini_fb/base.html" %}
 
 {% block content %}
-    <h2>{{ profile.first_name }} {{ profile.last_name }}</h2>
+    <!-- news_feed nav to show the profile's news_feed-->
+    <nav>
+        <a href="{% url 'news_feed' profile.pk %}">Newsfeed</a>
+    </nav>
+    
     <br>
     <div class="container">
-        <div class="child">
-            
+        <div class="child_profile">
+            <h2>{{ profile.first_name }} {{ profile.last_name }}</h2>
             <br>
             <img src="{{ profile.image_url }}" alt="{{ profile.image_url }}">
             <br>
@@ -19,10 +23,15 @@
             </p>
 
             <p>
-                <a href="{% url 'update_profile' profile.pk %}">Update Profile</a>
+                <a class='button' href="{% url 'update_profile' profile.pk %}">Update Profile</a>
+            </p>
+
             <hr>
+            <br>
+            <br>
+
             <h3>Status Messages</h3>
-            <p><a href="{% url 'create_status' profile.pk %}">add a status message</a></p>
+            <p><a class='button' href="{% url 'create_status' profile.pk %}">add a status message</a></p>
             {% if profile.get_status_messages %}
                 {% for status in profile.get_status_messages %}
                     <p>
@@ -33,15 +42,63 @@
                     {% for img in status.get_images %}
                         <img src='{{img.image_file.url}}' alt='{{img.image_file.url}}'>
                     {% endfor %}
-                    <!-- DELETE button -->
-                    <p><a href="{% url 'delete_status' status.pk %}">Delete</a></p>
+                    <!-- Update and DELETE button -->
+                    <p>
+                        <a class='button' href="{% url 'update_status' status.pk %}">Update</a>
+                        <a class='button' href="{% url 'delete_status' status.pk %}">Delete</a>
+                    </p>
+                    <br>
                 {% endfor %}
                 
             {% else %}
             
                 <p>No status messages</p>
             {% endif %}
+            
+            <hr>
+            <br>
+            <br>
 
+            <!-- showing all friends of a profile. -->
+            
+            <h3>Friends</h3>
+            <div class="container">
+            {% if profile.get_friends %}
+                {% for friend in profile.get_friends %}
+                    <div class="child_suggestion">
+                    <p>
+                        <!-- show their friend. Not themselves. Their friend is not always profile1. -->
+                        {% if friend.profile1 == profile %}
+                            <!-- if profile1 is this profile, then we want to display profile2 (their friend). -->
+                            {{ friend.profile2 }} 
+                            <br>
+                            <!-- profile picture and link -->
+                            <a href="{% url 'show_profile' friend.profile2.pk %}">
+                                <img class="suggestion_profile" src='{{friend.profile2.image_url}}' alt='{{friend.profile2.image_url}}'>
+                            </a>
+                        {% else %} 
+                            <!-- else, we can do profile1. yayy! -->
+                            {{ friend.profile1 }} 
+                            <br>
+                            <!-- profile picture and link -->
+                            <a href="{% url 'show_profile' friend.profile1.pk %}">
+                                <img class="suggestion_profile" src='{{friend.profile1.image_url}}' alt='{{friend.profile1.image_url}}'>
+                            </a>
+                        {% endif %}     
+                    </p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No friends</p>
+            {% endif %}
+            
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <!-- button to link to friend suggestions. -->
+            <p><a class='button' href="{% url 'friend_suggestions' profile.pk %}">Friend Suggestions</a></p>
 
         </div>
     </div>

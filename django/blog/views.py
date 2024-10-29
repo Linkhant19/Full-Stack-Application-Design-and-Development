@@ -51,7 +51,7 @@ class CreateCommentView(CreateView):
     template_name = "blog/create_comment_form.html"
 
     # what to do after form submission?
-    def get_success_url(self) -> str:
+    def get_success_url(self) -> str: 
         '''return the URL to redirect to after successful create'''
         # return "/blog/show_all"
         # return reverse("show_all_articles")

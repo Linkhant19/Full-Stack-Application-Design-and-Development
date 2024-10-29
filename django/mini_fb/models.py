@@ -30,6 +30,40 @@ class Profile(models.Model):
         # return reverse('show_all_profiles')
         return reverse('show_profile', kwargs={'pk': self.pk})
 
+    def get_friends(self):
+        '''Return a list of friend’s profiles.'''
+        friends = Friend.objects.filter(profile1=self) | Friend.objects.filter(profile2=self)
+        return friends
+
+    def add_friend(self, other):
+        '''Add a new friend relationship.'''
+        if not (self == other):
+            if not Friend.objects.filter(profile1=self, profile2=other).exists():
+                friend = Friend(profile1=self, profile2=other)
+                friend.save()
+
+    def get_friend_suggestions(self):
+        '''Return a list of friend suggestions.'''
+        friends = self.get_friends()
+        friend_pks = [f.profile1.pk if f.profile1 != self else f.profile2.pk for f in friends]
+        suggestions = Profile.objects.all().exclude(pk=self.pk).exclude(pk__in=friend_pks)
+        return suggestions
+
+    # method get_news_feed(self) on the Profile object, which will return a list (or QuerySet) of all StatusMessages for the profile on which the method was called, as well as all of the friends of that profile.
+
+    # Hint: it will be easiest to develop this by using the ORM to filter StatusMessages.
+
+
+    def get_news_feed(self):
+        '''Return a list (or QuerySet) of all StatusMessages for the profile on which the method was called, as well as all of the friends of that profile.'''
+        friends = self.get_friends()
+        friend_pks = [f.profile1.pk if f.profile1 != self else f.profile2.pk for f in friends]
+        news_feed = StatusMessage.objects.filter(profile__in=friend_pks) | StatusMessage.objects.filter(profile=self)
+        print(news_feed)
+        return news_feed
+
+
+
 class StatusMessage(models.Model):
     '''Encapsulate the data for a status message.'''
     # timestamp (the time at which this status message was created/saved)
@@ -61,6 +95,19 @@ class Image(models.Model):
     def __str__(self):
         '''Return a string representation of the object.'''
         return f"image for '{self.status_message}' message for {self.status_message.profile}"
+
+
+
+class Friend(models.Model):
+    '''Encapsulate the data for a friend relationship.'''
+    profile1 = models.ForeignKey("Profile", on_delete=models.CASCADE, related_name="profile1")
+    profile2 = models.ForeignKey("Profile", on_delete=models.CASCADE, related_name="profile2")
+    timestamp = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        '''Return a string representation of the object.'''
+        return f"{self.profile1} and {self.profile2}"
+
 
 
 

@@ -2,12 +2,12 @@
 # views to show the mini_fb application
 
 from typing import Any
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from . models import *
 from . forms import *
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
 import random
 
 # this is a class based view
@@ -119,3 +119,49 @@ class DeleteStatusMessageView(DeleteView):
         '''return the URL to redirect to after successful delete'''
         return reverse('show_profile', kwargs={'pk': self.object.profile.pk})
         # return reverse('show_profile', kwargs={'pk': self.kwargs['pk']})
+
+class UpdateStatusMessageView(UpdateView):
+    '''
+    class-based view called UpdateStatusMessageView, which inherits from the generic UpdateView class.
+    '''
+    model = StatusMessage
+    form_class = UpdateStatusForm
+    template_name = 'mini_fb/update_status_form.html'
+
+    def get_success_url(self) -> str:
+        '''return the URL to redirect to after successful update'''
+        return reverse('show_profile', kwargs={'pk': self.object.profile.pk})
+
+
+class CreateFriendView(View):
+    '''
+    class-based view called AddFriendView, which inherits from the generic View class.
+    '''
+    def dispatch(self, request, pk, other_pk):
+        '''
+        read the URL parameters (from self.kwargs), use the object manager to find the requisite Profile objects, and then call the Profile‘s add_friend method (from step 2, above).
+        '''
+        p1 = Profile.objects.get(pk=pk)
+        p2 = Profile.objects.get(pk=other_pk)
+        p1.add_friend(p2)
+        return redirect('show_profile', pk=pk)
+
+
+class ShowFriendSuggestionsView(DetailView):
+    '''
+    class-based view called ShowFriendSuggestionsView, which inherits from the generic DetailView class.
+    '''
+    model = Profile
+    template_name = 'mini_fb/friend_suggestions.html'
+    context_object_name = 'profile'
+
+
+class ShowNewsFeedView(DetailView):
+    '''
+    class-based view called ShowNewsFeedView, which inherits from the generic DetailView class.
+    '''
+    model = Profile
+    template_name = 'mini_fb/news_feed.html'
+    context_object_name = 'profile'
+
+    

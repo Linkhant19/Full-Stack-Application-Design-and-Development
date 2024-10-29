@@ -59,6 +59,79 @@ img {
     border: 15px inset #ef4040;
 }
 
+.child_profile {
+    /* I want child to have determine the flex items size. same size for each child. */
+    flex-basis: 1500px;
+    background-color: white;
+    /* border: 2px solid black; */
+    border: 2px inset #fff1f1;
+    /* align all items to center */
+    align-items: left;
+    text-align: left;
+    padding: 100px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    /* I got this code from https://css-pattern.com/ */
+    --s: 1px; /* control the size*/
+    --c1: #a4eaf4;
+    --c2: #c7fffe;
+    
+    --c:var(--c1) calc(100% - 2px),#0000;
+    --r:calc(2.414*var(--s));
+    --p:calc(1.414*var(--s));
+    --g:radial-gradient(var(--s),var(--c));
+    background:
+      radial-gradient(var(--r) at 0    0   ,var(--c)),
+      radial-gradient(var(--r) at 0    100%,var(--c)),
+      radial-gradient(var(--r) at 100% 0   ,var(--c)),
+      radial-gradient(var(--r) at 100% 100%,var(--c)),
+      var(--g),var(--g),var(--g),var(--g) var(--c2);
+    background-position: 
+      var(--r) var(--r),0 var(--p),var(--p) 0,
+      calc(-1*var(--s)) calc(-1*var(--s));
+    background-size: calc(2*var(--r)) calc(2*var(--r));
+}
+
+.child_suggestion {
+    /* max-width: 100px; */
+    /* i want width smaller */
+    background-color: white;
+    /* border: 2px solid black; */
+    border: 2px inset #fff1f1;
+    /* align all items to center */
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+
+    /* I got this code from https://css-pattern.com/ */
+    --s: 1px; /* control the size*/
+    --c1: #a4f4b0;
+    --c2: #c7ffd9;
+    
+    --c:var(--c1) calc(100% - 2px),#0000;
+    --r:calc(2.414*var(--s));
+    --p:calc(1.414*var(--s));
+    --g:radial-gradient(var(--s),var(--c));
+    background:
+      radial-gradient(var(--r) at 0    0   ,var(--c)),
+      radial-gradient(var(--r) at 0    100%,var(--c)),
+      radial-gradient(var(--r) at 100% 0   ,var(--c)),
+      radial-gradient(var(--r) at 100% 100%,var(--c)),
+      var(--g),var(--g),var(--g),var(--g) var(--c2);
+    background-position: 
+      var(--r) var(--r),0 var(--p),var(--p) 0,
+      calc(-1*var(--s)) calc(-1*var(--s));
+    background-size: calc(2*var(--r)) calc(2*var(--r));
+}
+
+.suggestion_profile {
+    width: 100px;
+    height: 100px;
+}
+
+
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
@@ -100,6 +173,7 @@ h1 {
 h2 {
     font-size: 2.5em;
     font-family: "Space Grotesk";
+    text-align: center;
     text-shadow: 
         1px 1px 0px black,   
         -1px 1px 0px black,  
@@ -161,4 +235,67 @@ input {
 
 .copyright {
     font-size: .9em;
+}
+
+.profile_pic {
+    /* make profile pic a small circle */
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: #c7fffe;
+    width: 100px;
+    height: 100px;
+}
+
+.news_feed {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+
+    /* I got this code from https://css-pattern.com/ */
+    /* I wanted to match it with the background, thus weird number for -s */
+    --s: 602px; /* control the size*/
+    /* --c1: #f4eda4; */
+    --c1: white;
+    --c2: #c7fffe;
+    
+    --c:var(--c1) calc(100% - 2px),#0000;
+    --r:calc(2.414*var(--s));
+    --p:calc(1.414*var(--s));
+    --g:radial-gradient(var(--s),var(--c));
+    background:
+      radial-gradient(var(--r) at 0    0   ,var(--c)),
+      radial-gradient(var(--r) at 0    100%,var(--c)),
+      radial-gradient(var(--r) at 100% 0   ,var(--c)),
+      radial-gradient(var(--r) at 100% 100%,var(--c)),
+      var(--g),var(--g),var(--g),var(--g) var(--c2);
+    background-position: 
+      var(--r) var(--r),0 var(--p),var(--p) 0,
+      calc(-1*var(--s)) calc(-1*var(--s));
+    background-size: calc(2*var(--r)) calc(2*var(--r));
+}
+
+/* button-looking links from show_profile */
+.button {
+    /* background-color: rgb(30, 105, 217); */
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20px;
+    background-color: white;
+    transition: background-color 1s;
+}
+
+.button:hover {
+    background-color: rgb(255, 153, 0);
+}
+
+.friend_suggestions {
+    border: 10px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

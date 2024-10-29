@@ -11,6 +11,10 @@
             <a href="{% url 'show_all_articles' %}">Show All Articles</a>
             <a href="{% url 'random' %}">Random</a>
             <a href="{% url 'create_article' %}">Create Article</a>
+
+            <p>
+                Logged in user: {{ request.user }}
+            </p>
         </nav>
         {% block content %}
         <!-- our interesting stuff here! -->

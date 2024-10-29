@@ -1,0 +1,27 @@
+<!-- mini_fb/templates/mini_fb/friend_suggestions.html -->
+
+{% extends 'mini_fb/base.html' %}
+
+{% block content %}
+
+<h3>Friend Suggestions</h3>
+    {% if profile.get_friend_suggestions %}
+        {% for s in profile.get_friend_suggestions %}
+            <div class="friend_suggestions">
+                <!-- add friend button that will add the friend and link back to current profile -->
+                <a class='button'href="{% url 'add_friend' profile.pk s.pk %}">Add Friend</a>
+                <h2>{{ s.first_name }} {{ s.last_name }}</h2>
+                <br>
+                <a href="{% url 'show_profile' s.pk %}"> 
+                    <img src="{{ s.image_url }}" alt="{{ s.image_url }}">
+                </a>
+                <p>
+                    {{ s.email }}
+                </p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No friend suggestions</p>
+    {% endif %}
+
+{% endblock %}

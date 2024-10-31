@@ -1,0 +1,23 @@
+<!-- blog/templates/blog/login.html -->
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<!-- very simple login -->
+<h2>Login</h2>
+<form method="POST" action="{% url 'login' %}">
+    
+    {% csrf_token %}
+    {{ form }}
+
+    <!-- only do this if we don't have next attrible already -->
+    {% if not next %}
+        <input type="hidden" name="next" value="{% url 'show_all_articles' %}">
+    {% else %}
+        <input type="hidden" name="next" value="{{ next }}">
+    {% endif %}
+        <input type="submit" value="Login">
+
+</form>
+
+{% endblock %}

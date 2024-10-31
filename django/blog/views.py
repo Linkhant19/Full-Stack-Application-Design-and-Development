@@ -8,6 +8,8 @@ from django.urls import reverse
 from . models import *
 from . forms import *
 from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin 
+
 import random
 
 # this is a class based view
@@ -17,6 +19,13 @@ class ShowAllView(ListView):
     model = Article
     template_name = 'blog/show_all.html'
     context_object_name = 'articles'
+
+    def dispatch(self, *args, **kwargs):
+        '''
+        implement this method to add some tracing.
+        '''
+        print(f'self.request.user={self.request.user}')
+        return super().dispatch(*args, **kwargs)
 
 class RandomArticleView(DetailView):
     '''Show one article selected at random.'''
@@ -43,7 +52,8 @@ class ArticleView(DetailView):
     context_object_name = 'article'
 
 
-class CreateCommentView(CreateView):
+# the order in which we provide these superclasses matter. In this case, LoginRequiredMixin has precedence. 
+class CreateCommentView(LoginRequiredMixin, CreateView):
     '''a view to show/process the create comment form: 
     on GET: send back the form
     on POST: read the form data,create an instance of Comment; save to database; redirect to a URL'''
@@ -92,15 +102,26 @@ class CreateCommentView(CreateView):
         context['article'] = article
         return context
 
-class CreateArticleView(CreateView):
+class CreateArticleView(LoginRequiredMixin, CreateView):
     '''View to create a new Article instance.'''
 
     form_class = CreateArticleForm
     template_name = 'blog/create_article_form.html'
 
+    def get_login_url(self) -> str:
+        '''return the URL required for login.'''
+        return reverse('login')
+
     def form_valid(self, form):
         '''Add some debugging statements.'''
         print(f'CreateArticleView.form_valid: form.cleaned_data={form.cleaned_data}')
+
+        # find which user is logged in
+        user = self.request.user
+        print(f'CreateArticleView.form_valid: user={user}')
+
+        # attach user to the new article instance
+        form.instance.user = user
 
         # delegate work to superclass
         return super().form_valid(form)

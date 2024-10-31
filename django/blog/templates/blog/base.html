@@ -8,12 +8,31 @@
     </head>
     <body>
         <nav>
+            <!-- URLs that don't depend on authentication -->
             <a href="{% url 'show_all_articles' %}">Show All Articles</a>
             <a href="{% url 'random' %}">Random</a>
-            <a href="{% url 'create_article' %}">Create Article</a>
+
+            <!-- URLs that depend on authentication -->
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'create_article' %}">Create Article</a>
+
+                <!-- want to fix 405 error at logout -->
+                <form method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <input type="submit" value="Logout">
+                </form>
+
+            {% else %}
+                <!-- Login URL -->
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
 
             <p>
-                Logged in user: {{ request.user }}
+                {% if request.user.is_authenticated %}
+                    Logged in user: {{ request.user }}
+                {% else %}
+                    Not logged in
+                {% endif %}
             </p>
         </nav>
         {% block content %}

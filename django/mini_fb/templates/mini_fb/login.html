@@ -1,27 +1,19 @@
-<!-- blog/templates/blog/login.html -->
-{% extends "blog/base.html" %}
+<!-- mini_fb/templates/mini_fb/login.html -->
+{% extends 'mini_fb/base.html' %}
 
 {% block content %}
-
-<!-- very simple login -->
 <h2>Login</h2>
 <form method="POST" action="{% url 'login' %}">
-    
     {% csrf_token %}
     {{ form }}
 
     <!-- only do this if we don't have next attrible already -->
     {% if not next %}
-        <input type="hidden" name="next" value="{% url 'show_all_articles' %}">
+        <input type="hidden" name="next" value="{% url 'show_all_profiles' %}">
     {% else %}
         <input type="hidden" name="next" value="{{ next }}">
     {% endif %}
         <input type="submit" value="Login">
 
 </form>
-
-<hr>
-Don't have an account yet?
-<a href="{% url 'register' %}">Register here!</a>
-
 {% endblock %}

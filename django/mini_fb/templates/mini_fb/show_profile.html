@@ -4,9 +4,17 @@
 
 {% block content %}
     <!-- news_feed nav to show the profile's news_feed-->
-    <nav>
-        <a href="{% url 'news_feed' profile.pk %}">Newsfeed</a>
-    </nav>
+
+    <!-- Hide if not logged in. -->
+    {% if request.user.is_authenticated %}
+        {% if request.user == profile.user %}
+            <nav>
+                <a href="{% url 'news_feed' %}">Newsfeed</a>
+            </nav>
+        {% endif %}
+    {% endif %}
+
+    
     
     <br>
     <div class="container">
@@ -22,16 +30,29 @@
                 {{ profile.email }}
             </p>
 
-            <p>
-                <a class='button' href="{% url 'update_profile' profile.pk %}">Update Profile</a>
-            </p>
+            <!-- Hide if not logged in. -->
+            {% if request.user.is_authenticated %}
+                {% if request.user == profile.user %}
+                    <p>
+                        <a class='button' href="{% url 'update_profile' %}">Update Profile</a>
+                    </p>
+                {% endif %}
+            {% endif %}
 
             <hr>
             <br>
             <br>
 
             <h3>Status Messages</h3>
-            <p><a class='button' href="{% url 'create_status' profile.pk %}">add a status message</a></p>
+
+            <!-- Hide if not logged in by the correct user. -->
+            <!-- only allow users with the connected foreign keys. -->
+            {% if request.user.is_authenticated %}
+                {% if request.user == profile.user %}
+                    <p><a class='button' href="{% url 'create_status' %}">add a status message</a></p>
+                {% endif %}
+            {% endif %}
+
             {% if profile.get_status_messages %}
                 {% for status in profile.get_status_messages %}
                     <p>
@@ -42,12 +63,19 @@
                     {% for img in status.get_images %}
                         <img src='{{img.image_file.url}}' alt='{{img.image_file.url}}'>
                     {% endfor %}
+
+
                     <!-- Update and DELETE button -->
-                    <p>
-                        <a class='button' href="{% url 'update_status' status.pk %}">Update</a>
-                        <a class='button' href="{% url 'delete_status' status.pk %}">Delete</a>
-                    </p>
-                    <br>
+                    <!-- Hide if not logged in. -->
+                    {% if request.user.is_authenticated %}
+                        {% if request.user == status.profile.user %}
+                            <p>
+                                <a class='button' href="{% url 'update_status' status.pk %}">Update</a>
+                                <a class='button' href="{% url 'delete_status' status.pk %}">Delete</a>
+                            </p>
+                        <br>
+                        {% endif %}
+                    {% endif %}
                 {% endfor %}
                 
             {% else %}
@@ -97,8 +125,14 @@
             <br>
             <br>
             <br>
+
             <!-- button to link to friend suggestions. -->
-            <p><a class='button' href="{% url 'friend_suggestions' profile.pk %}">Friend Suggestions</a></p>
+            <!-- Hide if not logged in. -->
+            {% if request.user.is_authenticated %}
+                {% if request.user == profile.user %}
+                    <p><a class='button' href="{% url 'friend_suggestions' %}">Friend Suggestions</a></p>
+                {% endif %}
+            {% endif %}
 
         </div>
     </div>

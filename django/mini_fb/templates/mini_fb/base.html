@@ -10,7 +10,30 @@
         <nav class="header">
             <a href="{% url 'show_all_profiles' %}">Show All Profiles</a>
             <a href="{% url 'create_profile' %}">Create Profile</a>
+
+            <!-- Hide if not logged in by the correct user. -->
+
+            {% if request.user.is_authenticated %}
+            
+                <!-- want to fix 405 error at logout -->
+                <form method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <input type="submit" value="Logout">
+                </form>
+            {% else %}
+                <!-- Login URL -->
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
         </nav>
+
+        <p>
+            {% if request.user.is_authenticated %}
+                Logged in user: {{ request.user }}
+            {% else %}
+                Not logged in
+            {% endif %}
+        </p>
+
         {% block content %}
         <!-- our interesting stuff here! -->
         {% endblock %}

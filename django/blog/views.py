@@ -2,13 +2,16 @@
 # views to show the blog application
 
 from typing import Any
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from . models import *
 from . forms import *
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.contrib.auth import login
 
 import random
 
@@ -125,3 +128,40 @@ class CreateArticleView(LoginRequiredMixin, CreateView):
 
         # delegate work to superclass
         return super().form_valid(form)
+
+
+class RegistrationView(CreateView):
+    '''Display and process the UserCreationForm for account registration.'''
+
+    template_name = 'blog/register.html'
+    form_class = UserCreationForm
+
+    def dispatch(self, *args, **kwargs):
+        '''
+        Called first in any generic view.
+        Handle the User creation process.
+        '''
+
+        # we handle the HTTP POST request
+        if self.request.POST:
+
+            # reconstruct the UserCreationForm from the HTTP POST
+            form = UserCreationForm(self.request.POST)
+
+            if not form.is_valid():
+                return super().dispatch(*args, **kwargs)
+
+            # save the new User object
+            user = form.save() # creates a new instance of User object in the database
+
+            ## mini_fb note: attach the user to the profile creation form before saving. 
+
+            # log in the User
+            login(self.request, user)
+
+            # redirect the user to some page view...
+            return redirect(reverse('show_all_articles'))
+            
+
+        # let the superclass CreateView handle the HTTP GET:
+        return super().dispatch(*args, **kwargs)

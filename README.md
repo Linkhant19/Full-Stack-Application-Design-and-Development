@@ -16,4 +16,9 @@ Restaurant Online Order: https://obscure-falls-84019-c2d49ef75cb4.herokuapp.com/
 <br> (<strong>new techniques:</strong> HTML forms, CSS ~, calculations, time)
 
 Mini Facebook one-page app: https://obscure-falls-84019-c2d49ef75cb4.herokuapp.com/mini_fb/
-<br> (<strong>new techniques:</strong> admin, models, migrations, database)
+<br> (<strong>new techniques:</strong> admin, models, migrations, database, search forms, login/logout integrations)
+
+Voter_analytics: https://obscure-falls-84019-c2d49ef75cb4.herokuapp.com/voter_analytics/
+<br> (<strong>new techniques:</strong> file processing, database, data search, filter methods, plotting data) 
+
+

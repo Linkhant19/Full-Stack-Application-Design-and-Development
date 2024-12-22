@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     "restaurant", # new restaurant app
     "blog", # new blog app
     "mini_fb", # new mini_fb app
+    "marathon_analytics", # new marathon_analytics app
+    "voter_analytics", # new voter_analytics app
+    "db_examples", # new db_examples app
 ]
 
 MIDDLEWARE = [

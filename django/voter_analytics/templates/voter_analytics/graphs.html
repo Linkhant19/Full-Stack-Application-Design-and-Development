@@ -1,0 +1,33 @@
+<!-- voter_analytics/templates/voter_analytics/graphs.html -->
+{% extends 'voter_analytics/base.html' %}
+{% block content %}
+<h1>Graphs</h1>
+<div class="container">
+<!-- include our search bar -->
+    <div class="row">
+        <!-- effectively importing the HTML from another file. -->
+        {% include 'voter_analytics/gsearch.html' %}
+    </div>   
+    <!-- show our histogram (bar graph) -->
+    <div class="row">
+        {{graph_bar|safe}}
+    </div>
+
+
+
+    <!-- show our pie chart -->
+    <div class="row">
+        {{graph_pie|safe}}
+    </div>
+
+
+
+    <!-- show our histogram (bar graph) -->
+    <div class="row">
+        {{graph_bar2|safe}}
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,126 @@
+/* imported from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Kalnia+Glaze:wght@100..700&family=Nabla&family=Sixtyfour+Convergence&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Kalnia+Glaze:wght@100..700&family=Nabla&family=Sixtyfour+Convergence&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+body {
+  background-color: #fff8c3;
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+}
+
+h1, h2, h3, footer,header, p {
+  font-family: "Bowlby One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(40, 40, 138);
+}
+
+h1 {
+  font-family: "Bowlby One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* table, td, th {
+  width: 90%; 
+  max-width: 1000px;
+  margin-left: 25px;
+  text-decoration:none;
+  padding: 10px;
+  margin: 10px;
+  color: rgb(40, 40, 138);
+  font-family: verdana;
+} */
+
+table {
+  width: 90%; 
+  max-width: 1000px;
+  margin-left: 25px;
+  border-collapse: collapse;
+  text-decoration:none;
+}
+
+td, th {
+  padding: 10px;
+  color: rgb(40, 40, 138);
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  text-align: left; /* Align text in cells */
+}
+
+th {
+  font-weight: bold;
+}
+
+/* Optionally, remove margins on td */
+td {
+  margin: 0; /* Avoids spacing issues */
+}
+
+
+nav ul {
+  text-align: center;
+}
+
+nav ul a, .container{
+  font-family: verdana;
+  color: rgb(40, 40, 138);
+  width: 90%;
+  max-width: 100px;
+  padding: 10px;
+  text-align: center;
+  transition: max-width 0.3s ease;
+  list-style-type: none;
+}
+li {
+  list-style-type: none;
+}
+
+.form-table {
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  padding: 30px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  text-align: center;
+  transition: max-width 0.3s ease;
+}
+
+.header-title {
+  text-align: center;
+  color: #7599d2;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+h4 a {
+  font-family:verdana;
+  display: inline-block;
+  color: rgb(40, 40, 138);
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #ccd0d6;
+  margin: 10px;
+}
+
+.form-picture {
+  margin: 5px 0;
+}
+
+.form-table {
+  justify-content: center;
+  text-align: center;
+}

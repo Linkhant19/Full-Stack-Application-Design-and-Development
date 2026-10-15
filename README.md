@@ -9,6 +9,8 @@ HTML, CSS, JavaScript, Python, Django
 
 ## Django applications: 
 
+(Unfortunately, my Heroku student subscription has expired, so most websites don't work anymore)
+
 Get A Quote: https://obscure-falls-84019-c2d49ef75cb4.herokuapp.com/quotes/
 <br>(Python, HTML, CSS, HTML loops, CSS animations, static, django)
 
